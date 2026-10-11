@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAJ & AGRA — The Grand Royal Guide & Interactive Trip Planner</title>
+  <meta name="description"
+    content="Discover the Taj Mahal and Agra with real photography, royal palace stays, authentic Mughal gastronomy, and an intelligent interactive itinerary planner.">
+  <meta name="keywords"
+    content="Taj Mahal, Agra tourism, Agra travel guide, Taj Mahal tickets, Fatehpur Sikri, Agra Fort, Mehtab Bagh, Mughal food, Agra hotels">
+  <meta name="theme-color" content="#080c14">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="TAJ & AGRA — The Grand Royal Guide & Interactive Trip Planner">
+  <meta property="og:description"
+    content="Experience the eternal wonder of the Taj Mahal with bespoke itineraries, live budget estimator, and verified Mughal travel intelligence.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/taj_mahal_hero.jpg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/jpeg" href="images/taj_mahal_hero.jpg">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       HEADER & NAVIGATION BAR
+       ====================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrapper">
+      <a href="#hero" class="brand-logo" id="brandLogo">
+        <div class="brand-crest">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L9.5 7.5L4 8.5L8 12.5L7 18L12 15L17 18L16 12.5L20 8.5L14.5 7.5L12 2Z" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">TAJ &amp; AGRA</span>
+          <span class="brand-tagline">Imperial Heritage Guide</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#monuments" class="nav-link">Monuments</a></li>
+          <li><a href="#stays" class="nav-link">Palatial Stays</a></li>
+          <li><a href="#food" class="nav-link">Gastronomy</a></li>
+          <li><a href="#planner" class="nav-link">Smart Planner</a></li>
+          <li><a href="#budget" class="nav-link">Live Budget</a></li>
+          <li><a href="#transit" class="nav-link">Transit</a></li>
+          <li><a href="#tips" class="nav-link">Advisory</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Currency, Saved Wishlist, CTA) -->
+      <div class="nav-actions">
+        <!-- Currency Selector -->
+        <div class="currency-select-wrapper">
+          <select id="currencySelect" class="currency-select" title="Choose Display Currency">
+            <option value="INR" selected>₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+          </select>
+        </div>
+
+        <!-- Saved Places Wishlist Button -->
+        <button id="btnOpenSavedDrawer" class="btn-saved-itinerary" title="View Saved Places">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
+          <span>Saved</span>
+          <span id="savedCountBadge" class="saved-count-badge" style="display: none;">0</span>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#planner" class="btn-cta-nav">
+          <span>Plan Journey</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       HERO SECTION WITH GENERATED ULTRA-CINEMATIC PHOTOGRAPHY
+       ====================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-container">
+      <img src="images/taj_mahal_hero.jpg" alt="Majestic Taj Mahal at Sunrise with Reflection" class="hero-bg-image"
+        id="heroBgImage">
+      <div class="hero-gradient-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span>✦</span> UNESCO World Heritage Site • Agra, India
+      </div>
+
+      <h1 class="hero-title">
+        Experience The Eternal Wonder of <span class="text-gold-gradient">The Taj Mahal</span>
+      </h1>
+
+      <p class="hero-description">
+        Immerse yourself in royal Mughal grandeur. Explore 12 legendary monuments, palatial five-star stays,
+        centuries-old culinary secrets, and generate custom day-by-day travel itineraries in seconds.
+      </p>
+
+      <!-- Instant Quick Search Bar -->
+      <div class="hero-search-box">
+        <div class="hero-search-input-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="heroSearchInput" class="hero-search-input"
+            placeholder="Search Taj Mahal, Agra Fort, Mehtab Bagh, Petha sweets, or hotels...">
+        </div>
+        <button id="heroSearchBtn" class="btn-hero-search">
+          Explore Agra
+        </button>
+      </div>
+
+      <!-- Hero Stats Grid -->
+      <div class="hero-stats-grid">
+        <div class="hero-stat-card">
+          <div class="hero-stat-number">12</div>
+          <div class="hero-stat-label">Historic Sites</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-number">12</div>
+          <div class="hero-stat-label">Palatial Stays</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-number">15</div>
+          <div class="hero-stat-label">Mughal Flavors</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-number">100%</div>
+          <div class="hero-stat-label">Verified Advice</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       HIGHLIGHTS STRIP (KEY TRAVEL ADVISORIES)
+       ====================================================================== -->
+  <aside class="highlights-strip">
+    <div class="container">
+      <div class="highlights-scroll">
+        <div class="highlight-item">
+          <div class="highlight-icon">🌅</div>
+          <div class="highlight-text">
+            <strong>Sunrise Gate Entry:</strong> Taj Mahal gates open 30 mins before sunrise (approx 6:00 AM).
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">⚠️</div>
+          <div class="highlight-text">
+            <strong>Friday Closure Alert:</strong> Taj Mahal remains closed for general visitors every Friday.
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🎟️</div>
+          <div class="highlight-text">
+            <strong>Online ASI Tickets:</strong> Pre-book to bypass main gate ticketing queues directly.
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🚄</div>
+          <div class="highlight-text">
+            <strong>Gatimaan Express:</strong> Fast train from Delhi to Agra in just 1 hour 40 minutes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       SMART INTERACTIVE TRIP PLANNER
+       ====================================================================== -->
+  <section class="planner-section" id="planner">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Intelligent Engine</span>
+        <h2 class="section-title">Smart Trip Itinerary Generator</h2>
+        <p class="section-subtitle">
+          Tailor your visit according to your schedule, travel group, and preferred pace. Get a complete hour-by-hour
+          timeline complete with food spots and travel secrets.
+        </p>
+      </div>
+
+      <!-- Configurator Card -->
+      <div class="planner-card">
+        <div class="planner-controls-grid">
+          <!-- Duration -->
+          <div class="planner-control-group">
+            <label class="planner-control-label" for="planDaysSelect">
+              <span>📅 Duration</span>
+            </label>
+            <select id="planDaysSelect" class="planner-select">
+              <option value="1">1 Day Express Wonder</option>
+              <option value="2" selected>2 Days Classic Imperial</option>
+              <option value="3">3 Days Grand Mughal Odyssey</option>
+            </select>
+          </div>
+
+          <!-- Group Type -->
+          <div class="planner-control-group">
+            <label class="planner-control-label" for="planGroupSelect">
+              <span>👥 Traveling As</span>
+            </label>
+            <select id="planGroupSelect" class="planner-select">
+              <option value="solo">Solo Explorer</option>
+              <option value="couple" selected>Couple / Romantic</option>
+              <option value="family">Family with Children</option>
+              <option value="friends">Group of Friends</option>
+            </select>
+          </div>
+
+          <!-- Pace -->
+          <div class="planner-control-group">
+            <label class="planner-control-label" for="planPaceSelect">
+              <span>⚡ Pace of Travel</span>
+            </label>
+            <select id="planPaceSelect" class="planner-select">
+              <option value="relaxed">Relaxed &amp; Leisurely</option>
+              <option value="balanced" selected>Balanced &amp; Comprehensive</option>
+              <option value="fast">Fast &amp; Dynamic</option>
+            </select>
+          </div>
+
+          <!-- Travel Style -->
+          <div class="planner-control-group">
+            <label class="planner-control-label" for="planStyleSelect">
+              <span>👑 Travel Style</span>
+            </label>
+            <select id="planStyleSelect" class="planner-select">
+              <option value="budget">Smart Backpacker</option>
+              <option value="comfort" selected>Heritage Comfort</option>
+              <option value="luxury">Imperial Royal Luxury</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="planner-action-bar">
+          <div class="planner-summary-badge">
+            <span>✦ Tailored Timing</span> • Optimizes for sunrise light and avoidance of peak monument crowds
+          </div>
+          <button id="btnGeneratePlan" class="btn-generate-plan">
+            <span>Generate Royal Itinerary</span> →
+          </button>
+        </div>
+      </div>
+
+      <!-- Generated Timeline Output -->
+      <div id="itineraryOutput" class="itinerary-output">
+        <!-- Injected dynamically via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       MONUMENTS & ROYAL HERITAGE EXPLORER
+       ====================================================================== -->
+  <section class="monuments-section" id="monuments">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Seven Wonders &amp; Beyond</span>
+        <h2 class="section-title">Monuments &amp; Historic Sites</h2>
+        <p class="section-subtitle">
+          Marvel at UNESCO World Heritage architecture, Mughal mausoleums, tranquil Yamuna riverside gardens, and
+          bustling centuries-old markets.
+        </p>
+      </div>
+
+      <!-- Filter Pills and Search Bar -->
+      <div class="filter-search-container">
+        <div class="filter-pills">
+          <button class="filter-pill active" data-monument-filter="all">All Sites (12)</button>
+          <button class="filter-pill" data-monument-filter="Monument">Imperial Monuments</button>
+          <button class="filter-pill" data-monument-filter="Garden">Gardens &amp; Sunsets</button>
+          <button class="filter-pill" data-monument-filter="Religious">Sacred &amp; Mosques</button>
+          <button class="filter-pill" data-monument-filter="Market">Historic Bazaars</button>
+          <button class="filter-pill" data-monument-filter="Day Trip">Day Trips</button>
+        </div>
+
+        <div class="filter-secondary-bar">
+          <div class="inline-search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="inlineSearchInput" placeholder="Filter by site name, area, interest...">
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <label for="monumentSortSelect" style="font-size: 0.85rem; color: var(--color-text-muted);">Sort By:</label>
+            <select id="monumentSortSelect" class="sort-select">
+              <option value="popularity">Popularity (Rank)</option>
+              <option value="price-low">Ticket Price: Low to High</option>
+              <option value="time-short">Visit Duration: Shortest</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monument Cards Grid -->
+      <div class="monuments-grid" id="monumentsGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       LUXURY & HERITAGE STAYS
+       ====================================================================== -->
+  <section class="stays-section" id="stays">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Royal Hospitality</span>
+        <h2 class="section-title">Palatial Stays &amp; Heritage Resorts</h2>
+        <p class="section-subtitle">
+          From opulent five-star resorts with unobstructed private Taj Mahal balcony views to atmospheric heritage
+          homestays and backpacker hubs.
+        </p>
+      </div>
+
+      <!-- Hero Palace Showcase Banner -->
+      <div class="stays-hero-banner">
+        <img src="images/mughal_palace.jpg" alt="Opulent Indian Mughal Palace Courtyard at Dusk" class="stays-hero-img">
+        <div class="stays-hero-content">
+          <span class="section-label" style="color: var(--color-gold-light);">The Palatial Experience</span>
+          <h3 class="stays-hero-title">Live Like Mughal Royalty Across The Yamuna</h3>
+          <p class="stays-hero-text">
+            Awaken to serene fountain murmurs, sitar melodies, and direct panoramic vistas of the ivory marble dome
+            bathed in rosy morning light.
+          </p>
+          <div>
+            <a href="#planner" class="btn-cta-nav">Curate My Stay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Pills -->
+      <div class="filter-pills" style="margin-bottom: 2.5rem;">
+        <button class="filter-pill active" data-hotel-filter="all">All Stays (12)</button>
+        <button class="filter-pill" data-hotel-filter="Luxury">Imperial Luxury (5-Star)</button>
+        <button class="filter-pill" data-hotel-filter="Comfort">Heritage Comfort</button>
+        <button class="filter-pill" data-hotel-filter="Budget">Smart Budget &amp; Hostels</button>
+      </div>
+
+      <!-- Stays Grid -->
+      <div class="stays-grid" id="staysGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       MUGHAL GASTRONOMY & AUTHENTIC FLAVORS
+       ====================================================================== -->
+  <section class="food-section" id="food">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Centuries of Culinary Art</span>
+        <h2 class="section-title">Mughal Gastronomy &amp; Iconic Street Flavors</h2>
+        <p class="section-subtitle">
+          Indulge in royal dum biryanis, melt-in-the-mouth charcoal kebabs, crispy morning bedhai puris, and the
+          world-renowned translucent Agra Petha sweet.
+        </p>
+      </div>
+
+      <!-- Food Filters -->
+      <div class="filter-pills" style="margin-bottom: 2.5rem;">
+        <button class="filter-pill active" data-food-filter="all">All Delicacies (15)</button>
+        <button class="filter-pill" data-food-filter="nonveg">Royal Non-Vegetarian</button>
+        <button class="filter-pill" data-food-filter="veg">Pure Vegetarian</button>
+        <button class="filter-pill" data-food-filter="breakfast">Morning Breakfasts</button>
+        <button class="filter-pill" data-food-filter="dessert">Sweets, Chaat &amp; Snacks</button>
+      </div>
+
+      <!-- Food Grid -->
+      <div class="food-grid" id="foodGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       LIVE BUDGET ESTIMATOR
+       ====================================================================== -->
+  <section class="budget-section" id="budget">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Financial Clarity</span>
+        <h2 class="section-title">Interactive Live Trip Budget Calculator</h2>
+        <p class="section-subtitle">
+          Estimate realistic expenses for accommodation, monument tickets, dining, and local transportation based on
+          your travel party and style.
+        </p>
+      </div>
+
+      <div class="budget-calculator-card">
+        <!-- Controls Column -->
+        <div class="budget-inputs-col">
+          <!-- Days Slider -->
+          <div class="budget-input-group">
+            <div class="budget-input-header">
+              <label class="budget-input-label" for="budgetDaysSlider">📅 Duration of Stay</label>
+              <span id="budgetDaysBadge" class="budget-input-val-badge">2 Days</span>
+            </div>
+            <input type="range" id="budgetDaysSlider" class="range-slider" min="1" max="5" value="2">
+          </div>
+
+          <!-- Travelers Slider -->
+          <div class="budget-input-group">
+            <div class="budget-input-header">
+              <label class="budget-input-label" for="budgetTravelersSlider">👥 Number of Travelers</label>
+              <span id="budgetTravelersBadge" class="budget-input-val-badge">2 Travelers</span>
+            </div>
+            <input type="range" id="budgetTravelersSlider" class="range-slider" min="1" max="8" value="2">
+          </div>
+
+          <!-- Tourist Origin (Indian vs Foreign) -->
+          <div class="budget-input-group">
+            <label class="budget-input-label">🌍 Visitor Category (Ticket Structure)</label>
+            <div class="tier-toggle-group">
+              <button class="tier-toggle-btn active" data-budget-origin="indian">Indian Resident</button>
+              <button class="tier-toggle-btn" data-budget-origin="foreign">International Visitor</button>
+            </div>
+          </div>
+
+          <!-- Stay Tier -->
+          <div class="budget-input-group">
+            <label class="budget-input-label">🏨 Accommodation Tier</label>
+            <div class="tier-toggle-group">
+              <button class="tier-toggle-btn" data-budget-stay="low">Smart Budget</button>
+              <button class="tier-toggle-btn active" data-budget-stay="medium">Heritage Comfort</button>
+              <button class="tier-toggle-btn" data-budget-stay="high">Royal Luxury</button>
+            </div>
+          </div>
+
+          <!-- Food Tier -->
+          <div class="budget-input-group">
+            <label class="budget-input-label">🍽️ Dining Preference</label>
+            <div class="tier-toggle-group">
+              <button class="tier-toggle-btn" data-budget-food="low">Street &amp; Dhabas</button>
+              <button class="tier-toggle-btn active" data-budget-food="medium">Cafes &amp; Mughal</button>
+              <button class="tier-toggle-btn" data-budget-food="high">Fine Dining</button>
+            </div>
+          </div>
+
+          <!-- Transit Tier -->
+          <div class="budget-input-group">
+            <label class="budget-input-label">🛺 Transportation Method</label>
+            <div class="tier-toggle-group">
+              <button class="tier-toggle-btn" data-budget-transit="low">Auto &amp; Metro</button>
+              <button class="tier-toggle-btn active" data-budget-transit="medium">Private Cab</button>
+              <button class="tier-toggle-btn" data-budget-transit="high">AC Chauffeur</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Display Column -->
+        <div class="budget-results-col">
+          <div class="results-header-total">
+            <span class="results-total-label">Estimated Total Trip Cost</span>
+            <div id="budgetGrandTotal" class="results-total-amount">₹0</div>
+            <div id="budgetPerPerson" class="results-per-person">(₹0 per person)</div>
+          </div>
+
+          <!-- Breakdown Progress Bars -->
+          <div class="results-breakdown-list">
+            <div class="breakdown-row">
+              <div class="breakdown-row-labels">
+                <span>🏨 Accommodation</span>
+                <strong id="breakdownStayAmt">₹0</strong>
+              </div>
+              <div class="breakdown-bar-bg">
+                <div id="barFillStay" class="breakdown-bar-fill fill-stay" style="width: 40%;"></div>
+              </div>
+            </div>
+
+            <div class="breakdown-row">
+              <div class="breakdown-row-labels">
+                <span>🎟️ Monument Tickets</span>
+                <strong id="breakdownTicketAmt">₹0</strong>
+              </div>
+              <div class="breakdown-bar-bg">
+                <div id="barFillTicket" class="breakdown-bar-fill fill-monument" style="width: 15%;"></div>
+              </div>
+            </div>
+
+            <div class="breakdown-row">
+              <div class="breakdown-row-labels">
+                <span>🍲 Dining &amp; Street Food</span>
+                <strong id="breakdownFoodAmt">₹0</strong>
+              </div>
+              <div class="breakdown-bar-bg">
+                <div id="barFillFood" class="breakdown-bar-fill fill-food" style="width: 25%;"></div>
+              </div>
+            </div>
+
+            <div class="breakdown-row">
+              <div class="breakdown-row-labels">
+                <span>🚗 Local Transit</span>
+                <strong id="breakdownTransitAmt">₹0</strong>
+              </div>
+              <div class="breakdown-bar-bg">
+                <div id="barFillTransit" class="breakdown-bar-fill fill-transit" style="width: 20%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-book-calculated-trip" onclick="window.location.href='#planner'">
+            Lock in Itinerary &amp; Reserve Details →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       TRANSIT & GETTING AROUND GUIDE
+       ====================================================================== -->
+  <section class="transit-section" id="transit">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Seamless Mobility</span>
+        <h2 class="section-title">Navigating Agra — Transit &amp; Fares</h2>
+        <p class="section-subtitle">
+          Compare Agra Metro routes, auto-rickshaw bargaining norms, private cab day rates, and high-speed express
+          trains.
+        </p>
+      </div>
+
+      <div class="transit-grid" id="transitGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       ESSENTIAL ADVISORY & TRAVEL INTELLIGENCE
+       ====================================================================== -->
+  <section class="tips-section" id="tips">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Official Advisories</span>
+        <h2 class="section-title">Insider Rules, Culture &amp; Tips</h2>
+        <p class="section-subtitle">
+          Essential protocols to make your journey hassle-free, safe, and culturally enriching.
+        </p>
+      </div>
+
+      <div class="tips-grid" id="tipsGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#hero" class="brand-logo" style="margin-bottom: 0.8rem;">
+            <div class="brand-crest">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L9.5 7.5L4 8.5L8 12.5L7 18L12 15L17 18L16 12.5L20 8.5L14.5 7.5L12 2Z" />
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">TAJ &amp; AGRA</span>
+              <span class="brand-tagline">Imperial Heritage Guide</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            The definitive architectural and cultural travel portal for Agra, India. Designed with reverence for Mughal
+            history, authentic local cuisine, and seamless visitor journeys.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#monuments" class="footer-link">Taj Mahal &amp; Fort</a></li>
+            <li><a href="#stays" class="footer-link">Palatial Resorts</a></li>
+            <li><a href="#food" class="footer-link">Mughal Gastronomy</a></li>
+            <li><a href="#planner" class="footer-link">Interactive Planner</a></li>
+            <li><a href="#budget" class="footer-link">Trip Cost Estimator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Monument Hours</h4>
+          <ul class="footer-links" style="font-size: 0.84rem; color: var(--color-text-secondary);">
+            <li><strong>Taj Mahal:</strong> Sunrise to Sunset (Closed Fridays)</li>
+            <li><strong>Agra Fort:</strong> 6:00 AM – 5:30 PM (Daily)</li>
+            <li><strong>Mehtab Bagh:</strong> 5:00 AM – 7:00 PM (Daily)</li>
+            <li><strong>Fatehpur Sikri:</strong> Sunrise to Sunset (Daily)</li>
+            <li><strong>Agra Metro:</strong> 6:00 AM – 10:00 PM</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Emergency &amp; Helpdesk</h4>
+          <div class="emergency-chip">
+            🚨 <strong>Agra Tourist Police:</strong> +91 9277848275<br>
+            📱 <strong>WhatsApp:</strong> +91 9115376462
+          </div>
+          <div class="emergency-chip">
+            📞 <strong>National Emergency:</strong> 112
+          </div>
+          <div class="emergency-chip"
+            style="background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.3); color: #a7f3d0;">
+            🎫 <strong>ASI Online Tickets:</strong> asi.payumoney.com
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 TAJ &amp; AGRA Heritage Guide. All Rights Reserved. Crafted for unforgettable journeys.</p>
+        <p>Built with Vanilla HTML5, CSS3 &amp; Modern JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       MODAL: MONUMENT & ATTRACTION DETAILS
+       ====================================================================== -->
+  <div class="modal-backdrop" id="detailsModal" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="detailsModalContent">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL: STAY RESERVATION INQUIRY
+       ====================================================================== -->
+  <div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="bookingModalContent">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       SLIDE-OUT DRAWER: SAVED WISHLIST / ITINERARY
+       ====================================================================== -->
+  <div class="drawer-backdrop" id="savedDrawerBackdrop">
+    <div class="drawer-panel" id="savedDrawerPanel">
+      <div class="drawer-header">
+        <h3 class="drawer-title">💖 My Saved Places</h3>
+        <button id="btnCloseDrawer"
+          style="background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer;">✕</button>
+      </div>
+
+      <div class="drawer-body" id="savedDrawerList">
+        <!-- Injected dynamically -->
+      </div>
+
+      <div class="drawer-footer">
+        <button class="btn-secondary" style="width: 100%; justify-content: center;" onclick="window.clearAllSaved()">
+          Clear Wishlist
+        </button>
+        <button class="btn-cta-nav" style="width: 100%; justify-content: center;"
+          onclick="window.location.href='#planner'; document.getElementById('savedDrawerBackdrop').classList.remove('active');">
+          Create Plan with Saved Items →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript App -->
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

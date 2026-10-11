@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palatial Stays &amp; Heritage Luxury Hotels in Agra | TAJ &amp; AGRA</title>
+  <meta name="description" content="Discover Agra's most iconic luxury and heritage hotels, from The Oberoi Amarvilas with direct Taj Mahal views to 100-year-old colonial mansions and boutique retreats.">
+  <meta name="theme-color" content="#080c14">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Palatial Stays & Heritage Luxury Hotels in Agra">
+  <meta property="og:description" content="Experience royal Mughal luxury, rooftop infinity pools overlooking the Taj Mahal dome, and tranquil heritage courtyards.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/mughal_palace.jpg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/jpeg" href="images/taj_mahal_hero.jpg">
+</head>
+<body>
+
+  <!-- ======================================================================
+       HEADER & NAVIGATION BAR
+       ====================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <div class="brand-crest">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L9.5 7.5L4 8.5L8 12.5L7 18L12 15L17 18L16 12.5L20 8.5L14.5 7.5L12 2Z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">TAJ &amp; AGRA</span>
+          <span class="brand-tagline">Imperial Heritage Guide</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="monuments.html" class="nav-link">Monuments</a></li>
+          <li><a href="stays.html" class="nav-link active">Palatial Stays</a></li>
+          <li><a href="gastronomy.html" class="nav-link">Gastronomy</a></li>
+          <li><a href="planner.html" class="nav-link">Trip Planner</a></li>
+          <li><a href="guide.html" class="nav-link">Travel Guide</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="currency-select-wrapper">
+          <select id="currencySelect" class="currency-select" title="Choose Display Currency">
+            <option value="INR" selected>₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+          </select>
+        </div>
+
+        <button id="btnOpenSavedDrawer" class="btn-saved-itinerary" title="View Saved Places">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span>Saved</span>
+          <span id="savedCountBadge" class="saved-count-badge" style="display: none;">0</span>
+        </button>
+
+        <a href="planner.html" class="btn-cta-nav"><span>Plan Journey</span></a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       PAGE HERO BANNER
+       ====================================================================== -->
+  <section class="page-hero-banner">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Palatial Stays</span>
+      </div>
+      <span class="section-label">Royal Mughal Hospitality</span>
+      <h1 class="section-title">Palatial Stays &amp; Heritage Resorts</h1>
+      <p class="section-subtitle">
+        Indulge in royal Mughal hospitality. From five-star resorts offering direct bedroom balcony views of the Taj Mahal to 100-year-old colonial mansions and vibrant backpacker terraces.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       HERO RESORT SHOWCASE
+       ====================================================================== -->
+  <section style="padding: 3.5rem 0 2rem;">
+    <div class="container">
+      <div class="stays-hero-banner">
+        <img src="images/mughal_palace.jpg" alt="Palatial Heritage Hotel Courtyard with Lanterns" class="stays-hero-img">
+        <div class="stays-hero-content">
+          <span class="section-label" style="color: var(--color-gold-light);">The Imperial Standard</span>
+          <h2 class="stays-hero-title">Wake Up to The Taj Mahal from Your Bed</h2>
+          <p class="stays-hero-text">
+            Properties like <strong>The Oberoi Amarvilas</strong> (just 600m from the East Gate) and <strong>ITC Mughal</strong> provide royal concierge services, private candlelit dinner pavilions by reflective pools, and sunrise buggy escorts directly to the monument.
+          </p>
+          <div>
+            <a href="#staysGridSection" class="btn-cta-nav">Browse Curated Accommodations ↓</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       FILTERABLE STAYS DIRECTORY
+       ====================================================================== -->
+  <section class="stays-section" id="staysGridSection" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Tailored to Every Traveler</span>
+        <h2 class="section-title">Verified Accommodations Directory</h2>
+        <p class="section-subtitle">
+          Filter by luxury class, view proximity to the monument, and inquire about availability directly with verified pricing.
+        </p>
+      </div>
+
+      <div class="filter-pills" style="margin-bottom: 2.5rem;">
+        <button class="filter-pill active" data-hotel-filter="all">All Stays (12)</button>
+        <button class="filter-pill" data-hotel-filter="Luxury">Imperial Luxury (5-Star)</button>
+        <button class="filter-pill" data-hotel-filter="Comfort">Heritage Comfort</button>
+        <button class="filter-pill" data-hotel-filter="Budget">Smart Budget &amp; Hostels</button>
+      </div>
+
+      <!-- Stays Grid -->
+      <div class="stays-grid" id="staysGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       HERITAGE VS MODERN LUXURY GUIDE
+       ====================================================================== -->
+  <section style="background: var(--color-bg-deep); padding: 5rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Curated Insider Advice</span>
+        <h2 class="section-title">Choosing Your Stay in Agra</h2>
+        <p class="section-subtitle">
+          Key considerations between Taj Ganj walking-distance locations versus Fatehabad Road luxury resort compounds.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+        <div style="background: var(--color-surface); border: 1px solid var(--color-surface-border); border-radius: var(--radius-lg); padding: 2rem;">
+          <h3 style="font-family: var(--font-serif-royal); color: var(--color-gold-light); font-size: 1.25rem; margin-bottom: 0.6rem;">
+            🏰 The Taj East Gate Corridor
+          </h3>
+          <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.65; margin-bottom: 1rem;">
+            <strong>Best For:</strong> Sunrise access within 5–10 minutes walking distance without needing motorized transport.
+          </p>
+          <p style="color: var(--color-text-muted); font-size: 0.85rem;">
+            Includes <em>The Oberoi Amarvilas</em>, <em>Hotel Taj Resorts</em>, and <em>Radisson Agra</em>. Vehicle entry is restricted within 500m of the Taj Mahal for clean-air compliance, making these properties ideal for battery golf cart shuttles.
+          </p>
+        </div>
+
+        <div style="background: var(--color-surface); border: 1px solid var(--color-surface-border); border-radius: var(--radius-lg); padding: 2rem;">
+          <h3 style="font-family: var(--font-serif-royal); color: var(--color-gold-light); font-size: 1.25rem; margin-bottom: 0.6rem;">
+            🌳 Fatehabad Road Resort Row
+          </h3>
+          <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.65; margin-bottom: 1rem;">
+            <strong>Best For:</strong> Expansive multi-acre estates with luxury spas, multiple restaurants, and pools.
+          </p>
+          <p style="color: var(--color-text-muted); font-size: 0.85rem;">
+            Home to <em>ITC Mughal</em>, <em>Trident Agra</em>, and <em>Courtyard by Marriott</em>. Located 1.5–2.5 km from the Taj Mahal, easily reachable via short 5-minute taxi or auto-rickshaw rides.
+          </p>
+        </div>
+
+        <div style="background: var(--color-surface); border: 1px solid var(--color-surface-border); border-radius: var(--radius-lg); padding: 2rem;">
+          <h3 style="font-family: var(--font-serif-royal); color: var(--color-gold-light); font-size: 1.25rem; margin-bottom: 0.6rem;">
+            🎒 Taj Ganj Historic Lanes
+          </h3>
+          <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.65; margin-bottom: 1rem;">
+            <strong>Best For:</strong> Solo travelers, backpackers, rooftop cafes, and budget immersion.
+          </p>
+          <p style="color: var(--color-text-muted); font-size: 0.85rem;">
+            Properties like <em>Joey's Hostel</em> and guesthouses offer vibrant community vibes, evening music, and rooftop views where you can sip chai while gazing at the monument silhouette.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.8rem;">
+            <div class="brand-crest">
+              <svg viewBox="0 0 24 24"><path d="M12 2L9.5 7.5L4 8.5L8 12.5L7 18L12 15L17 18L16 12.5L20 8.5L14.5 7.5L12 2Z"/></svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">TAJ &amp; AGRA</span>
+              <span class="brand-tagline">Imperial Heritage Guide</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            The definitive architectural, cultural, and travel portal for Agra, India.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Explore Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home Portal</a></li>
+            <li><a href="monuments.html" class="footer-link">Historic Monuments &amp; Tickets</a></li>
+            <li><a href="stays.html" class="footer-link">Palatial Resorts &amp; Stays</a></li>
+            <li><a href="gastronomy.html" class="footer-link">Mughal Gastronomy &amp; Petha</a></li>
+            <li><a href="planner.html" class="footer-link">Smart Planner &amp; Budget</a></li>
+            <li><a href="guide.html" class="footer-link">Travel Guide &amp; Metro Transit</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Monument Hours</h4>
+          <ul class="footer-links" style="font-size: 0.84rem; color: var(--color-text-secondary);">
+            <li><strong>Taj Mahal:</strong> Sunrise to Sunset (Closed Fridays)</li>
+            <li><strong>Agra Fort:</strong> 06:00 AM – 06:00 PM (Daily)</li>
+            <li><strong>Mehtab Bagh:</strong> 06:00 AM – 07:00 PM (Daily)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Emergency &amp; Helpdesk</h4>
+          <div class="emergency-chip">🚨 <strong>Agra Tourist Police:</strong> +91 562 242 1204</div>
+          <div class="emergency-chip">📞 <strong>National Emergency:</strong> 112</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 TAJ &amp; AGRA Heritage Guide. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: STAY RESERVATION INQUIRY -->
+  <div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="bookingModalContent"></div>
+    </div>
+  </div>
+
+  <!-- DRAWER: SAVED PLACES -->
+  <div class="drawer-backdrop" id="savedDrawerBackdrop">
+    <div class="drawer-panel" id="savedDrawerPanel">
+      <div class="drawer-header">
+        <h3 class="drawer-title">💖 My Saved Places</h3>
+        <button id="btnCloseDrawer" style="background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer;">✕</button>
+      </div>
+      <div class="drawer-body" id="savedDrawerList"></div>
+      <div class="drawer-footer">
+        <button class="btn-secondary" style="width: 100%; justify-content: center;" onclick="window.clearAllSaved()">Clear Wishlist</button>
+        <a href="planner.html" class="btn-cta-nav" style="width: 100%; justify-content: center; text-align: center;">Build Plan with Saved Items →</a>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
